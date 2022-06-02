@@ -33,7 +33,7 @@ $(function(){
     $('#form_reg').on('submit',function(e){
         e.preventDefault()
         var data = { username:$('#form_reg [name=username]').val(),password:$('#form_reg [name=password]').val()}
-        $.post('http://api-breakingnews-web.itheima.net/api/reguser',data,function(res){
+        $.post('/api/reguser',data,function(res){
             if(res.status !==0){
                 return layer.msg(res.message)
             }
@@ -46,7 +46,7 @@ $(function(){
     $('#form_login').on('submit',function(e){
         e.preventDefault()
         $.ajax({
-            url:'http://api-breakingnews-web.itheima.net/api/login',
+            url:'/api/login',
             method:'POST',
             //快速获取表单中的数据
             data:$(this).serialize(),
