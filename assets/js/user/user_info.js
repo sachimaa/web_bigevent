@@ -20,7 +20,7 @@ $(function(){
                 if(res.status !== 0){
                     return layer.msg('获取用户信息失败!')
                 }
-                console.log(res);
+                // console.log(res);
                 //调用form.val快速为表单赋值
                 form.val('formUserInfo',res.data)
             }
@@ -42,7 +42,7 @@ $(function(){
         $.ajax({
             method:'POST',
             url:'/my/userinfo',
-            data:$('.layui-form').serialize(),
+            data:$(this).serialize(),
             success:function(res){
                 if(res.status !== 0 ){
                     return layer.msg('更新用户信息失败！')
